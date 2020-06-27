@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Our Blog</h1>
+  <div *ngFor="let post of posts">
+    <div class="row">
+    <div class="imgCont  col-sm-5"><img src="/assets/img/{{post.img}}" alt=""></div>
+    <div class="textCont col-sm-7">
+      <h3>{{post.title}}</h3>
+      <p class="subtitle">{{post.subtitle}}</p>
+      <p class="date">created: {{post.dateHrf}} at {{post.timeHrf}} &nbsp; &nbsp; <i class="fas fa-map-marker-alt"></i> {{post.location}}</p>
+      <p class="author">by {{post.author}}  </p>
+      <p class="content">{{post.content}}</p>
+      <p class="like"><ng-template [ngIf]="post.buttonPressed < 1" [ngIfElse]="none">{{post.likes}} <button (click)="increaseLikes(post)" type="button" id="{{post.index}}"><i class="far fa-thumbs-up"></i>Like</button></ng-template>
+        <ng-template #none>
+          {{post.likes}} <button (click)="decreaseLikes(post)" type="button" ><i class="far fa-thumbs-down"></i>Dislike</button>
+        </ng-template>
+      </p>
+    </div>
+    </div>
+  </div>
+</div>

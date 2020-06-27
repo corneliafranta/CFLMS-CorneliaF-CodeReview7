@@ -1,0 +1,31 @@
+<div class="travelHeader">
+
+  <h1>Scandinavia is natural beauty</h1>
+
+</div>
+<div class="travelMain">
+
+  <h1>Our Tours</h1>
+
+<div class="row">
+  <div *ngFor="let travel of travels" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="assets/img/{{travel.img}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" style="height: 2em">{{travel.title}}</h5>
+      <p class="locations"><i class='fas fa-globe-europe'></i> {{travel.destination}}</p>
+      <p class="card-text" style="height: 12em">{{travel.descrition}}</p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="far fa-calendar-alt"></i> When? {{travel.startDate}} </li>
+        <li class="list-group-item"><i class="fas fa-hourglass"></i> Durration: {{travel.duration}}</li>
+        <li class="list-group-item"><i class="fas fa-money-bill-wave"></i> {{travel.price | currency}} / person</li>
+      </ul>
+      <button type="button" (click)="addToCart(travel)" class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+</div>
